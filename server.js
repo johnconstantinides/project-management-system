@@ -50,7 +50,7 @@ app.post('/projects/update/:id', (req,res) => {
             project.course = req.body.course;
             project.projectName = req.body.projectName;
             project.dueDate = req.body.dueDate;
-            project.dueDate = req.body.status;
+            project.finished = req.body.finished;
 
             project.save()
                 .then(() => res.json('Project has been updated'))

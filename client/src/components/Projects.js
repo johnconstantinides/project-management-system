@@ -3,9 +3,13 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
+import Update from "./Update";
+
 function Projects(){
 
     const[projects, setProject] = useState([])
+    const[update,setUpdate] = useState(false);
+    const[updatedProject,setUpdatedProject] = useState("")
 
     const getProjectsData = () => {
         axios.get("http://localhost:5000/projects")
@@ -22,8 +26,21 @@ function Projects(){
         window.location = "/"
     }
 
-    const projectComplete = (bool) =>{
-        axios.update()
+    const projectComplete = (id,course,projectName,dueDate,finished) =>{
+        axios.post("http://localhost:5000/projects/update/" + id,
+        {
+            course,
+            projectName,
+            dueDate,
+            finished
+
+        })
+        window.location = "/"
+    }
+
+    const updatePro = (updatingProject) =>{
+        setUpdate(true)
+        setUpdatedProject(updatingProject)
     }
 
 
@@ -50,13 +67,17 @@ function Projects(){
                                 <td>{item.course}</td>
                                 <td>{item.projectName}</td>
                                 <td>{item.dueDate}</td>
-                                <td><button type="button" className="btn btn-secondary ">{item.status ? "completed" : "incomplete"} </button></td>
-                                <td><button type="button" className="btn btn-secondary">Update</button></td>
+                                
+                                <td> {item.finished ? <button type="button" className="btn btn-success " onClick={() => projectComplete(item._id,item.course,item.projectName,item.dueDate,!item.finished)}>{item.finished ? "completed" : "incomplete"} </button>
+                                : <button type="button" className="btn btn-danger " onClick={() => projectComplete(item._id,item.course,item.projectName,item.dueDate,!item.finished)}>{item.finished ? "completed" : "incomplete"} </button>}</td>
+
+                                <td><button type="button" className="btn btn-secondary" onClick={() => updatePro(item)}>Update</button></td>
                                 <td><button type="button" className="btn btn-secondary" onClick={() => deleteProject(item._id)}>Delete</button></td>
                             </tr>
                         ))}
                         </tbody>
                     </table>
+                    {update ? <Update updatedProject/> : false}
                     </div>
                 :
                 <p className="text-center">There are no projects</p>}
