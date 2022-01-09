@@ -33,21 +33,21 @@ function Add(){
     }
 
     return(
+        <div className="row h-100 justify-content-center align-items-center">
             <form onSubmit={addNewProject}>
-            <div className="mb-3">
-                <label className="form-label">Course</label>
-                <input onChange={onChangeCourse} value={course} required type="text" className="form-control" id="exampleInputEmail1" />
+            <div className="mb-3 col-sm-5">
+                <input onChange={onChangeCourse} value={course} required placeholder="Course" type="text" className="form-control" id="exampleInputEmail1" />
             </div>
-            <div className="mb-3">
-                <label  className="form-label">Project Name</label>
-                <input onChange={onChangeProjectName} value={projectName} required type="text" className="form-control" />
+            <div className="mb-3 col-sm-5">
+                <input onChange={onChangeProjectName} value={projectName} placeholder="Project Name" required type="text" className="form-control" />
             </div>
-            <div >
+            <div className="mb-3 col-sm-5">
                 <label className="form-label">Due Date</label>
                 <input onChange={onChangeDueDate} value={dueDate} required type="date" className="form-control"/>
             </div>
             <input type="submit" value="Submit" className="btn btn-primary" />
             </form>
+            </div>
     )
 }
 
