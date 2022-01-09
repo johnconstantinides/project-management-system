@@ -19,11 +19,10 @@ function Projects(){
     }
     useEffect(() => {
         getProjectsData();
-    },[]);
+    },[projects]);
 
     const deleteProject = (id) =>{
         axios.delete("http://localhost:5000/projects/delete/" + id)
-        window.location = "/"
     }
 
     const projectComplete = (id,course,projectName,dueDate,finished) =>{
@@ -35,7 +34,6 @@ function Projects(){
             finished
 
         })
-        window.location = "/"
     }
 
     const updatePro = (updatingProject) =>{
