@@ -35,7 +35,8 @@ app.get('/projects', (req,res) => {
 app.post('/projects/add',(req,res) => {
     const newProject = new Project({
         name: req.body.name,
-        projectName: req.body.projectName
+        projectName: req.body.projectName,
+        dueDate: req.body.dueDate
     })
 
     newProject.save()

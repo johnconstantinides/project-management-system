@@ -34,7 +34,7 @@ function Projects(){
                                 <th>Name</th>
                                 <th>Project Name</th>
                                 <th>Status</th>
-                                <th>Update</th>
+                                <th>Due Date</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
@@ -44,7 +44,7 @@ function Projects(){
                                 <td>{item.name}</td>
                                 <td>{item.projectName}</td>
                                 <td>{item.status ? "completed" : "Uncompleted"}</td>
-                                <td>test1</td>
+                                <td>{item.dueDate}</td>
                                 <td><button type="button" className="btn btn-secondary" onClick={() => deleteProject(item._id)}>Delete</button></td>
                             </tr>
                         ))}

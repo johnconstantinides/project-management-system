@@ -5,7 +5,7 @@ function Navbar(){
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className='navbar-brand'>Project Manager</Link>
-            <div className='collapse navbar-collapse'>
+            <div className='collpase navbar-collapse'>
             <ul className='navbar-nav mr-auto'>
                 <li className='navbar-item'>
                     <Link to="/add" className='nav-link'>Add Project</Link>
