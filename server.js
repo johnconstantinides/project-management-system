@@ -34,7 +34,7 @@ app.get('/projects', (req,res) => {
 
 app.post('/projects/add',(req,res) => {
     const newProject = new Project({
-        name: req.body.name,
+        course: req.body.course,
         projectName: req.body.projectName,
         dueDate: req.body.dueDate
     })
@@ -47,8 +47,10 @@ app.post('/projects/add',(req,res) => {
 app.post('/projects/update/:id', (req,res) => {
     Project.findById(req.params.id)
         .then(project => {
-            project.name = req.body.name;
-            project.projectName = req.body.projectName
+            project.course = req.body.course;
+            project.projectName = req.body.projectName;
+            project.dueDate = req.body.dueDate;
+            project.dueDate = req.body.status;
 
             project.save()
                 .then(() => res.json('Project has been updated'))

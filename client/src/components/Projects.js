@@ -22,34 +22,42 @@ function Projects(){
         window.location = "/"
     }
 
+    const projectComplete = (bool) =>{
+        axios.update()
+    }
+
 
     return(
         <div>
             <div className="container">
                 <h1 className="text-center">Your Projects</h1>
                 {projects.length > 0 ?
-                    <table className="table">
-                        <thead className="thead-light">
+                <div className="shadow-lg p-3 mb-5 bg-white rounded">
+                    <table className="table table-striped">
+                        <thead className="thead-dark">
                             <tr>
-                                <th>Name</th>
+                                <th>Course</th>
                                 <th>Project Name</th>
-                                <th>Status</th>
                                 <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Update</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                         {projects.map((item,i) =>(
                             <tr key={i}>
-                                <td>{item.name}</td>
+                                <td>{item.course}</td>
                                 <td>{item.projectName}</td>
-                                <td>{item.status ? "completed" : "Uncompleted"}</td>
                                 <td>{item.dueDate}</td>
+                                <td><button type="button" className="btn btn-secondary ">{item.status ? "completed" : "incomplete"} </button></td>
+                                <td><button type="button" className="btn btn-secondary">Update</button></td>
                                 <td><button type="button" className="btn btn-secondary" onClick={() => deleteProject(item._id)}>Delete</button></td>
                             </tr>
                         ))}
                         </tbody>
                     </table>
+                    </div>
                 :
                 <p className="text-center">There are no projects</p>}
             </div>

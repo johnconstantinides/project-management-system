@@ -6,12 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Add(){
 
-    const[name, setName] = useState("");
+    const[course, setCourse] = useState("");
     const[projectName,setProjectName] = useState("");
     const[dueDate,setDueDate] = useState("");
 
-    const onChangeName = (e) =>{
-        setName(e.target.value);
+    const onChangeCourse = (e) =>{
+        setCourse(e.target.value);
     }
     const onChangeProjectName = (e) =>{
         setProjectName(e.target.value)
@@ -25,7 +25,7 @@ function Add(){
         console.log("ok")
         axios.post("http://localhost:5000/projects/add",
         {
-            name,
+            course,
             projectName,
             dueDate
         })
@@ -35,8 +35,8 @@ function Add(){
     return(
             <form onSubmit={addNewProject}>
             <div className="mb-3">
-                <label className="form-label">Name</label>
-                <input onChange={onChangeName} value={name} required type="text" className="form-control" id="exampleInputEmail1" />
+                <label className="form-label">Course</label>
+                <input onChange={onChangeCourse} value={course} required type="text" className="form-control" id="exampleInputEmail1" />
             </div>
             <div className="mb-3">
                 <label  className="form-label">Project Name</label>
