@@ -11,9 +11,6 @@ function Navbar(){
                 <li className='navbar-item'>
                     <Link to="/add" className='nav-link'>Add Project</Link>
                 </li>
-                <li className='navbar-item'>
-                    <Link to="/update" className='nav-link'>Update Project</Link>
-                </li>
             </ul>
             </div>
         </nav>
