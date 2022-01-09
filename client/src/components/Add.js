@@ -10,13 +10,13 @@ function Add(){
     const[projectName,setProjectName] = useState("");
     const[dueDate,setDueDate] = useState("");
 
-    function onChangeName(e){
+    const onChangeName = (e) =>{
         setName(e.target.value);
     }
-    function onChangeProjectName(e){
+    const onChangeProjectName = (e) =>{
         setProjectName(e.target.value)
     }
-    function onChangeDueDate(e){
+    const onChangeDueDate = (e) =>{
         setDueDate(e.target.value)
     }
 
