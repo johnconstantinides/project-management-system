@@ -77,7 +77,7 @@ function Projects(){
                         ))}
                         </tbody>
                     </table>
-                    {update ? <Update updatedProject/> : false}
+                    {update ? <Update pro ={updatedProject}/> : false}
                     </div>
                 :
                 <p className="text-center">There are no projects</p>}

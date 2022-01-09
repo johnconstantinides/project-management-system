@@ -4,11 +4,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-function Update(){
+function Update(props){
 
-    const[course, setCourse] = useState("");
-    const[projectName,setProjectName] = useState("");
-    const[dueDate,setDueDate] = useState("");
+    const[course, setCourse] = useState(props.pro.course);
+    const[projectName,setProjectName] = useState(props.pro.projectName);
+    const[dueDate,setDueDate] = useState(props.pro.dueDate);
 
     const onChangeCourse = (e) =>{
         setCourse(e.target.value);
@@ -29,6 +29,7 @@ function Update(){
             dueDate,
             status
         })
+        window.location = "/"
 
     }
     const cancelUpdate = () =>{
@@ -36,7 +37,7 @@ function Update(){
     }
 
     return(
-            <form onSubmit={updateProject} >
+            <form onSubmit={() => updateProject(props.pro._id,course,projectName,dueDate,props.pro.status)} >
             <div className="mb-3">
                 <label className="form-label">Course</label>
                 <input onChange={onChangeCourse} value={course} required type="text" className="form-control" />
