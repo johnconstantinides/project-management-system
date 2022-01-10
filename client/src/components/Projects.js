@@ -19,7 +19,7 @@ function Projects(){
     }
     useEffect(() => {
         getProjectsData();
-        console.log(projects.length)
+        console.log(projects)
     },[projects]);
 
     const deleteProject = (id) =>{
