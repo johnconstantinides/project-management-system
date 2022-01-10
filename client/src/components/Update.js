@@ -22,7 +22,7 @@ function Update(props){
 
 
     const updateProject = (id,course,projectName,dueDate,finished) => {
-        axios.post("http://localhost:5000/projects/update/" + id,
+        axios.post("https://project-management-list.herokuapp.com/projects/update/" + id,
         {
             course,
             projectName,

@@ -21,8 +21,7 @@ function Add(){
 
 
     const addNewProject = () => {
-        console.log("ok")
-        axios.post("http://localhost:5000/projects/add",
+        axios.post("https://project-management-list.herokuapp.com/projects/add",
         {
             course,
             projectName,
