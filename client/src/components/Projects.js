@@ -47,8 +47,8 @@ function Projects(){
             <div className="container">
                 <h1 className="text-center">Your Projects</h1>
                 {projects.length > 0 ?
-                <div className="shadow-lg p-3 mb-5 bg-white rounded">
-                    <table className="table table-striped table-layout:fixed">
+                <div className="shadow-lg p-3 mb-5 bg-white rounded table-responsive">
+                    <table className="table table-striped">
                         <thead className="thead-dark">
                             <tr>
                                 <th>Course</th>
