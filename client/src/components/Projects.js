@@ -15,12 +15,10 @@ function Projects(){
         axios.get("https://project-management-list.herokuapp.com/projects")
             .then(response => {
                 setProject(response.data)
-                console.log(response.data)
             })
     }
     useEffect(() => {
         getProjectsData();
-        console.log(projects)
     },[projects]);
 
     const deleteProject = (id) =>{
