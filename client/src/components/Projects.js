@@ -60,17 +60,17 @@ function Projects(){
                             </tr>
                         </thead>
                         <tbody>
-                        {projects.length > 0 & projects.map((item,i) =>(
+                        {Object.keys(projects).map((item,i) =>(
                             <tr key={i}>
-                                <td>{item.course}</td>
-                                <td>{item.projectName}</td>
-                                <td>{item.dueDate}</td>
+                                <td>{projects[item].course}</td>
+                                <td>{projects[item].projectName}</td>
+                                <td>{projects[item].dueDate}</td>
                                 
-                                <td> {item.finished ? <button type="button" className="btn btn-success " onClick={() => projectComplete(item._id,item.course,item.projectName,item.dueDate,!item.finished)}>{item.finished ? "completed" : "incomplete"} </button>
-                                : <button type="button" className="btn btn-danger " onClick={() => projectComplete(item._id,item.course,item.projectName,item.dueDate,!item.finished)}>{item.finished ? "completed" : "incomplete"} </button>}</td>
+                                <td> {projects[item].finished ? <button type="button" className="btn btn-success " onClick={() => projectComplete(projects[item]._id,projects[item].course,projects[item].projectName,projects[item].dueDate,!projects[item].finished)}>{projects[item].finished ? "completed" : "incomplete"} </button>
+                                : <button type="button" className="btn btn-danger " onClick={() => projectComplete(projects[item]._id,projects[item].course,projects[item].projects[item],projects[item].dueDate,!projects[item].finished)}>{projects[item].finished ? "completed" : "incomplete"} </button>}</td>
 
-                                <td><button type="button" className="btn btn-secondary" onClick={() => updatePro(item)}>Update</button></td>
-                                <td><button type="button" className="btn btn-secondary" onClick={() => deleteProject(item._id)}>Delete</button></td>
+                                <td><button type="button" className="btn btn-secondary" onClick={() => updatePro(projects[item])}>Update</button></td>
+                                <td><button type="button" className="btn btn-secondary" onClick={() => deleteProject(projects[item]._id)}>Delete</button></td>
                             </tr>
                         ))}
                         </tbody>
