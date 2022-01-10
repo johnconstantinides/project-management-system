@@ -34,6 +34,7 @@ function Projects(){
             finished
 
         })
+        console.log("ok")
     }
 
     const updatePro = (updatingProject) =>{
