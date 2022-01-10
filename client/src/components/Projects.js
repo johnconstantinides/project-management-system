@@ -60,7 +60,7 @@ function Projects(){
                             </tr>
                         </thead>
                         <tbody>
-                        {Object.entries(projects).map((item,i) =>(
+                        {projects.map((item,i) =>(
                             <tr key={i}>
                                 <td>{item.course}</td>
                                 <td>{item.projectName}</td>
