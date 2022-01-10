@@ -21,13 +21,13 @@ function Update(props){
     }
 
 
-    const updateProject = (id,course,projectName,dateDute,status) => {
+    const updateProject = (id,course,projectName,dueDate,finished) => {
         axios.post("http://localhost:5000/projects/update/" + id,
         {
             course,
             projectName,
             dueDate,
-            status
+            finished
         })
         window.location = "/"
 
@@ -37,7 +37,7 @@ function Update(props){
     }
 
     return(
-            <form onSubmit={() => updateProject(props.pro._id,course,projectName,dueDate,props.pro.status)} >
+            <form onSubmit={() => updateProject(props.pro._id,course,projectName,dueDate,props.pro.finished)} >
             <div className="mb-3">
                 <label className="form-label">Course</label>
                 <input onChange={onChangeCourse} value={course} required type="text" className="form-control" />
