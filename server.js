@@ -22,16 +22,6 @@ connection.once('open', () => {
     console.log("Connected to database")
 })
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static(path.join(__dirname, "client", "build")));
-    app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-    });
-}
-
-app.listen(port, () => {
-    console.log(`server running on port ${port}`)
-})
 
 app.get('/projects', (req,res) => {
     Project.find()
@@ -70,4 +60,15 @@ app.delete('/projects/delete/:id', (req,res) => {
     Project.findByIdAndDelete(req.params.id)
         .then(() => res.json('Project deleted'))
         .catch(err => res.status(400).json("Error " + err))
+})
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static(path.join(__dirname, "client", "build")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    });
+}
+
+app.listen(port, () => {
+    console.log(`server running on port ${port}`)
 })
