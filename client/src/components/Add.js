@@ -3,7 +3,6 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-
 function Add(){
 
     const[course, setCourse] = useState("");
