@@ -41,7 +41,7 @@ function Add(){
             <div className="mb-3 col-sm-5">
                 <input onChange={onChangeProjectName} value={projectName} placeholder="Project Name" required type="text" className="form-control" />
             </div>
-            <div className="mb-3 col-sm-5">
+            <div className="mb-2 col-sm-4">
                 <label className="form-label">Due Date</label>
                 <input onChange={onChangeDueDate} value={dueDate} required type="date" className="form-control"/>
             </div>
