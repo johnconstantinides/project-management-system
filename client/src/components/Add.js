@@ -28,7 +28,9 @@ function Add(){
             projectName,
             dueDate
         });
-        window.location = "/";
+        setCourse("");
+        setProjectName("");
+        setDueDate("");
     }
 
     return(

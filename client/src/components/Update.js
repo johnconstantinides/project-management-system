@@ -30,7 +30,6 @@ function Update(props){
             dueDate,
             finished
         })
-        window.location = "/"
 
     }
     const cancelUpdate = () =>{

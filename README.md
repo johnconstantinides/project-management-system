@@ -1,5 +1,5 @@
 # project-management-system
 manage your projects or assignments for all of your courses or just for anything in life
-https://project-management-list.herokuapp.com/
+https://project-management-systems.netlify.app/
 
-Heroku is removing there free tier soon so this link might not work. will be updating it when I have time.
+App might be a bit slow at the start due to me using free resources to host the backend.
