@@ -21,8 +21,9 @@ function Update(props){
     }
 
 
-    const updateProject = (id,course,projectName,dueDate,finished) => {
-        axios.post("https://project-management-list.herokuapp.com/projects/update/" + id,
+    const updateProject = (event,id,course,projectName,dueDate,finished) => {
+        event.preventDefault();
+        axios.post("https://project-management-system-e5ix.onrender.com/projects/update/" + id,
         {
             course,
             projectName,
@@ -37,7 +38,7 @@ function Update(props){
     }
 
     return(
-            <form onSubmit={() => updateProject(props.pro._id,course,projectName,dueDate,props.pro.finished)} >
+            <form onSubmit={(event) => updateProject(event,props.pro._id,course,projectName,dueDate,props.pro.finished)} >
             <div className="mb-3">
                 <label className="form-label">Course</label>
                 <input onChange={onChangeCourse} value={course} required type="text" className="form-control" />

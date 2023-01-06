@@ -12,7 +12,7 @@ function Projects(){
     const[updatedProject,setUpdatedProject] = useState("")
 
     const getProjectsData = () => {
-        axios.get("https://project-management-list.herokuapp.com/projects")
+        axios.get("https://project-management-system-e5ix.onrender.com/projects")
             .then(response => {
                 setProject(response.data)
             })
@@ -22,18 +22,18 @@ function Projects(){
     },[projects]);
 
     const deleteProject = (id) =>{
-        axios.delete("https://project-management-list.herokuapp.com/projects/delete/" + id)
+        axios.delete("https://project-management-system-e5ix.onrender.com/projects/delete/" + id);
     }
 
     const projectComplete = (id,course,projectName,dueDate,finished) =>{
-        axios.post("https://project-management-list.herokuapp.com/projects/update/" + id,
+        axios.post("https://project-management-system-e5ix.onrender.com/projects/update/" + id,
         {
             course,
             projectName,
             dueDate,
             finished
 
-        })
+        });
     }
 
     const updatePro = (updatingProject) =>{

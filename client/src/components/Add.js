@@ -20,14 +20,15 @@ function Add(){
     }
 
 
-    const addNewProject = () => {
-        axios.post("https://project-management-list.herokuapp.com/projects/add",
+    const addNewProject = (event) => {
+        event.preventDefault();
+        axios.post("https://project-management-system-e5ix.onrender.com/projects/add",
         {
             course,
             projectName,
             dueDate
-        })
-
+        });
+        window.location = "/";
     }
 
     return(
